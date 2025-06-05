@@ -103,6 +103,17 @@ body {
   }
 }
 
+.todo-app-wrapper #todo-list .checked {
+  text-decoration: line-through;
+  color: red;
+  background-color: #28a745;
+  height: 100%;
+  width: 100%;
+  &:hover {
+    background-color: #218838;
+  }
+}
+
 .todo-app-wrapper #todo-list li:last-child {
   border-bottom: 0;
 }

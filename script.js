@@ -33,6 +33,15 @@ function renderTasks(todoText) {
             }
         })
     })
+    checkBox.forEach((check, i) => {
+        check.addEventListener('click', function (e) {
+            if (e.target.checked) {
+                e.target.parentElement.classList.add('checked');
+            } else {
+                e.target.parentElement.classList.remove('checked');
+            }
+        })
+    })
 }
 
 function editTask(editButton) {
@@ -55,12 +64,6 @@ function editTask(editButton) {
                 taskList[index - 1] = toDoInput.value.trim();
                 toDoInput.parentElement.remove();
                 renderTasks()
-                // todoList.childNodes[(index - 1) + 1].innerHTML = `  
-                // <input type="checkbox" class="check-todo">
-                // <span>${taskList[taskList.length - 1]}</span>
-                // <button class="edit-todo"><i class="fas fa-edit"></i></button>
-                // <button class="delete-todo"><i class="fas fa-trash"></i></button>
-                // `;
             })
         })
     })
